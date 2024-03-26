@@ -4,3 +4,5 @@ To compile this code with a C compiler on your Linux system. You can use GCC (GN
 
 For windows Users : 
 Just download the .exe file from Releases
+thix is the link :
+https://github.com/KTWASSIM/Mini-Git/releases/download/public/MiniGit.exe
