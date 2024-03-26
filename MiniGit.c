@@ -265,7 +265,6 @@ int saveSnapshotsToFile() {
     return 1; // Snapshots saved successfully
 }
 
-// Function to delete a snapshot
 void deleteSnapshot(const char* snapshot) {
     // Check if the snapshot file exists
     if (!fileExists(snapshot)) {
