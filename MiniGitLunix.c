@@ -163,7 +163,7 @@ void restoreSnapshot(const char* snapshot) {
         printf("Error: Invalid snapshot path.\n");
         return;
     }
-    char filename[MAX_FILENAME];
+    char command[MAX_FILENAME * 2];
     strcpy(filename, last_underscore + 1);
 
     // Copy the snapshot file to the current directory with the original filename
