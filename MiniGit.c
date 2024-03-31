@@ -24,9 +24,6 @@ typedef struct Snapshot {
 Snapshot *head = NULL;
 
 // Function prototypes
-char* hashToPath(const char* hash);
-int directoryExists(const char* path);
-int makeDirectories(const char* path);
 int fileExists(const char* filename);
 void addSnapshot(const char* filename, const char* timestamp);
 void createSnapshot(const char* file);
@@ -34,34 +31,6 @@ void viewSnapshots(const char* file);
 void restoreSnapshot(const char* snapshot);
 int getValidInput(int min, int max);
 void getFilenameInput(char* filename);
-
-// Function to generate the path of a file based on its hash
-char* hashToPath(const char* hash) {
-    char* path = (char*)malloc(strlen(hash) + 3); // Add 2 for '/' and '\0'
-    if (path == NULL) {
-        perror("Memory allocation failed");
-        exit(EXIT_FAILURE);
-    }
-    snprintf(path, strlen(hash) + 3, "%c%c/%s", hash[0], hash[1], hash + 2);
-    return path;
-}
-
-// Function to check if a directory exists
-int directoryExists(const char* path) {
-    struct stat info;
-    if (stat(path, &info) != 0) {
-        return 0; // Directory doesn't exist
-    }
-    return S_ISDIR(info.st_mode);
-}
-
-// Function to create directories recursively
-int makeDirectories(const char* path) {
-    char command[PATH_MAX + 10]; // +10 for "mkdir -p "
-    snprintf(command, sizeof(command), "mkdir -p \"%s\"", path);
-    return system(command);
-}
-
 // Function to check if a file exists
 int fileExists(const char* filename) {
     struct stat buffer;
