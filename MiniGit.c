@@ -22,15 +22,6 @@ typedef struct Snapshot {
 
 // Global variables (outside of any function)
 Snapshot *head = NULL;
-
-// Function prototypes
-int fileExists(const char* filename);
-void addSnapshot(const char* filename, const char* timestamp);
-void createSnapshot(const char* file);
-void viewSnapshots(const char* file);
-void restoreSnapshot(const char* snapshot);
-int getValidInput(int min, int max);
-void getFilenameInput(char* filename);
 // Function to check if a file exists
 int fileExists(const char* filename) {
     struct stat buffer;
